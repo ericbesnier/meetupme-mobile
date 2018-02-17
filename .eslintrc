@@ -1,18 +1,12 @@
 {
   "extends": "ericbesnier",
   "parser": "babel-eslint",
-  "rules": {
-    "accessor-pairs": "off",
-    "strict": 0,
-    "no-console": "off"
-  },
   "parserOptions": {
-    "ecmaVersion": 7,
-    "ecmaFeatures": {
-        "experimentalObjectRestSpread": true,
-        "experimentalDecorators": true,
-        "jsx": true
-    },
-    "sourceType": "module"
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "codeFrame": true
+  },
+  "rules": {
+    "no-console": "off"
   }
 }

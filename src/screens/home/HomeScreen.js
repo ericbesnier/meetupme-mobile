@@ -10,12 +10,7 @@ import { fetchMyMeetups } from './actions';
 import Colors from './../../../constants/Colors';
 import styles from './styles/HomeScreen';
 
-// @connect(state => ({
-//     myMeetups: state.home.myMeetups,
-//   }),
-//   { fetchMyMeetups }(HomeScreen)
-// )
-
+@connect(state => ({ myMeetups: state.home.myMeetups,}), { fetchMyMeetups })
 class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Eric Besnier, lui-même !',
@@ -64,6 +59,8 @@ class HomeScreen extends Component {
   }
 }
 
+export default HomeScreen;
+
 // Le container a pour but de faire le lien entre le state géré par Redux et les props du component.
 // Il définit également des fonctions qui dispatchent des actions afin de mettre à jour le state.
 //
@@ -73,18 +70,16 @@ class HomeScreen extends Component {
 // enfin, on “ connecte “ le container à son component.
 // Le state et les fonctions définies plus haut seront ainsi accessibles par le component “connecté” (ici HomeScreen) via ses props
 
-const mapStateToProps = (state) => ({
-  myMeetups: state.home.myMeetups,
-});
+// const mapDispatchToProps = () => fetchMyMeetups;
 
-const mapDispatchToProps = () => fetchMyMeetups;
-
-const Container = connect(
-  state => mapStateToProps(state),
-  { fetchMyMeetups }
-)(HomeScreen);
-
-export default Container;
+// const mapStateToProps = (state) => ({
+//   myMeetups: state.home.myMeetups,
+// });
+// const Container = connect(
+//   state => mapStateToProps(state),
+//   { fetchMyMeetups }
+// )(HomeScreen);
+// export default Container;
 
 // export default connect(
 //   state => ({
